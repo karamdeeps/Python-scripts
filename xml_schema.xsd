@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://kama.org/etc/schema/" xmlns:etc="http://kama.org/etc/schema/">
+  <xs:element name="ReqTagDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Head" form="unqualified">
+          <xs:complexType>
+            <xs:attribute name="msgId" use="required" type="xs:integer"/>
+            <xs:attribute name="orgId" use="required" type="xs:NCName"/>
+            <xs:attribute name="ts" use="required" type="xs:NMTOKEN"/>
+            <xs:attribute name="ver" use="required" type="xs:decimal"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Txn" form="unqualified">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Vehicle" form="unqualified">
+                <xs:complexType>
+                  <xs:attribute name="TID" use="required"/>
+                  <xs:attribute name="tagId" use="required"/>
+                  <xs:attribute name="vehicleRegNo" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" use="required" type="xs:integer"/>
+            <xs:attribute name="note" use="required"/>
+            <xs:attribute name="orgTxnId" use="required"/>
+            <xs:attribute name="refId" use="required"/>
+            <xs:attribute name="refUrl" use="required"/>
+            <xs:attribute name="ts" use="required" type="xs:NMTOKEN"/>
+            <xs:attribute name="type" use="required" type="xs:NCName"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
